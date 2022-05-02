@@ -16,4 +16,8 @@ export class CoursesService {
       .get<Course[]>(this.API)
       .pipe(delay(0), tap(console.log));
   }
+
+  save(record: Course) {
+    return this.httpClient.post<Course>(this.API, record);
+  }
 }
